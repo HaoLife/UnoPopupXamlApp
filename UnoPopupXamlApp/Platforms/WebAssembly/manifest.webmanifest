@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "UnoPopupXamlApp",
+  "display": "standalone",
+  "name": "UnoPopupXamlApp",
+  "short_name": "UnoPopupXamlApp",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
