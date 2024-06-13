@@ -8,16 +8,15 @@ public static class RegionExtensions
 {
     public static async ValueTask ShowTotasAsync(this IRegion that, string content, string title = null, long millisecond = 2000, InfoBarSeverity severity = InfoBarSeverity.Informational, bool isClosable = false)
     {
-        //var dispatcher = that.Services.GetRequiredService<IDispatcher>();
-        var window = that.Services.GetRequiredService<Window>();
-        var shell = window.Content as FrameworkElement;
-        if (shell == null) throw new Exception("Window.Content 必须继承 FrameworkElement");
-
         var dispatcher = that.Services.GetRequiredService<IDispatcher>();
         var alertName = "alert";
 
         await dispatcher.ExecuteAsync(async () =>
         {
+            var window = that.Services.GetRequiredService<Window>();
+            var shell = window.Content as FrameworkElement;
+            if (shell == null) throw new Exception("Window.Content 必须继承 FrameworkElement");
+
             //var shell = window.Content as Shell;
             if (!(shell.FindName(alertName) is StackPanel alert))
             {
